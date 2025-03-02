@@ -12,6 +12,7 @@
 #define PREFIX_IS_REX(x) (PREFIX_REX == (x & 0b11110000))
 #define ADD_EAX_INSN 0x05
 
+// NOTICE: get_teb and get_peb functions are only for confirmation
 static inline TEB *get_teb(void) {
 #if defined(_WIN64)
   return __readgsqword(&((NT_TIB *)0)->Self);
